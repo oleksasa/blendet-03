@@ -1,5 +1,6 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, Outlet } from 'react-router-dom';
 import { FaFlagUsa } from 'react-icons/fa';
+import { Suspense } from 'react';
 
 import styles from './Header.module.css';
 
@@ -36,6 +37,9 @@ export const Header = () => {
           </nav>
         </div>
       </header>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Outlet />
+      </Suspense>
     </>
   );
 };
